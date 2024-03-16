@@ -1,0 +1,37 @@
+.footer{
+    background: rgb(76, 88, 102);
+    position: relative;
+    z-index: 30;
+    .footer__container{
+        @extend %container;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer__images{
+        display: flex;
+        gap: 35px;
+        
+    }
+}
+@media (max-width:480px){
+    .footer{
+
+        .footer__container{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            gap: 20px;
+            ;
+        }
+        .footer__images{
+            border-top: 1px solid rgba(221, 221, 221, 0.2);
+            padding-top: 24px;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}

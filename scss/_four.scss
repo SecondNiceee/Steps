@@ -1,0 +1,31 @@
+.four{
+    background: rgb(235, 235, 235);
+    .four__container{
+        @extend %container;
+        padding-top: 90px;
+        padding-bottom: 90px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+    .four__image{
+        width: 100%;
+    }
+}
+@media(max-width:700px){
+    .four{
+        .four__container{
+            grid-template-columns:  1fr 1fr;
+        }
+    }
+
+}
+@media (max-width:576px){
+    .four{
+        .four__container{
+            padding-top: clamp(2.5rem, -13.125rem + 52.08vw, 5.625rem);
+            padding-bottom: clamp(2.5rem, -13.125rem + 52.08vw, 5.625rem);
+        }
+    }
+}

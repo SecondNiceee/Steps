@@ -1,0 +1,93 @@
+
+.one{
+    .one__container{
+        padding-top: 130px;
+        padding-bottom: 130px;
+        @extend %container;
+        position: relative;
+    }
+    .one__text-block{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 460px;
+    }
+    .one__title{
+        @include text(60px);
+        color: rgb(76, 88, 102);
+    }
+    .one__text{
+        @include text(18px);    
+        color: rgb(133, 133, 155);
+    }
+    .one__button{
+        @extend %button;
+        align-self: flex-start;
+    }
+    .one__img{
+        position: absolute;
+        top: 60px;
+        right: 40px;
+        width: clamp(25.438rem, -22.926rem + 75.57vw, 33.75rem);
+    }
+}
+
+
+@media (max-width:1024px){
+    .one{
+        .one__container{
+            padding-top: clamp(4.063rem, -8.125rem + 25.39vw, 8.125rem);
+            padding-bottom: clamp(4.063rem, -8.125rem + 25.39vw, 8.125rem);
+        }
+        .one__img{
+            width: clamp(16.875rem, -8.813rem + 53.52vw, 25.438rem);
+        }
+        .one__title{
+            font-size: clamp(3.125rem, 1.25rem + 3.91vw, 3.75rem);
+        }
+        .one__text-block{
+            max-width: clamp(24.375rem, 11.25rem + 27.34vw, 28.75rem);
+        }
+    }
+}
+
+@media (max-width:768px){
+    .one{
+        .one__container{
+            padding-top: clamp(3.75rem, 2.813rem + 2.6vw, 4.063rem);
+            padding-bottom: clamp(3.75rem, 2.813rem + 2.6vw, 4.063rem);
+        }
+        .one__title{
+            font-size: clamp(2.375rem, 0.125rem + 6.25vw, 3.125rem);
+        }
+        .one__text-block{
+            max-width: clamp(17.813rem, -1.875rem + 54.69vw, 24.375rem);
+        }
+        .one__img{
+            width: clamp(12.5rem, -0.625rem + 36.46vw, 16.875rem);
+            right: clamp(1.25rem, -2.5rem + 10.42vw, 2.5rem);
+        }
+        .one__text{
+            font-size: clamp(1rem, 0.625rem + 1.04vw, 1.125rem);
+        }
+
+    }
+}
+@media (max-width:576px){
+    .one{
+        .one__img{
+            width: clamp(10rem, -10.313rem + 62.5vw, 12.188rem);
+
+        }
+    }
+}
+@media (max-width:520px){
+    .one{
+        .one__img{
+            display: none;
+        }
+        .one__text-block{
+            max-width: 100%;
+        }
+    }
+}

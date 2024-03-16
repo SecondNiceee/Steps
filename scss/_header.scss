@@ -1,0 +1,173 @@
+.header{
+    .header__nav{
+        margin-left: auto;
+        justify-content: space-between;
+        gap: 60px;
+        @include text(20px);
+        transform: translateY(8px);
+        color: rgb(76, 88, 102)
+    }
+    .header__container{
+        @extend %container;
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+    .header__top{
+        border-bottom: 1px solid rgb(221, 221, 221);
+
+        .header__nav{
+            display: flex;
+        }
+        .header__images{
+            display: flex;
+            margin-left: 63px;
+            gap: 31px;
+            transform: translateY(5px);
+        }
+
+
+    }
+    .header__bottom{
+        .header__nav{
+            display: none;
+        }
+        .header__images{
+            display: none;
+        }
+    }
+    .burger{
+        display: none;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+        z-index: 100;
+        & span{
+            transition: 0.5s;
+        }
+        & span:nth-child(1){
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 80%;
+            height: 0.1rem;
+            background: black;
+            border-radius: 50%;
+        }
+        & span:nth-child(2){
+            position: absolute;
+            top: 11px;
+            left: 2px;
+            width: 80%;
+            height: 0.1rem;
+            background: black;
+            border-radius: 50%;       
+         }
+        & span:nth-child(3){
+            position: absolute;
+            top: 20px;
+            left: 2px;
+            width: 80%;
+            height: 0.1rem;
+            background: black;
+            border-radius: 50%;
+        }
+    }
+
+
+}
+@media (max-width:900px){
+    .header{
+        .header__top{
+            .header__container{
+                justify-content: space-between;
+                padding-top: 11px;
+                padding-bottom: 11px;
+            }
+            .header__nav{
+                display: none;
+            }
+        }
+        .header__bottom{
+            border-bottom: 1px solid rgb(221, 221, 221);
+            .header__container{
+                padding-top: 18px;
+                padding-bottom: 18px;
+            }
+            .header__nav{
+                display: flex;
+                margin-left: 0;
+                gap: unset;
+                justify-content: space-between;
+                width: 100%;
+                transform: none;
+            }
+
+        }
+    }
+}
+@media (max-width:480px){
+    .header{
+        .header__top{
+            .header__images{
+                display: none;
+            }
+            .header__container{
+                padding-top: 15px;
+                padding-bottom: 15px;
+                justify-content: center;
+            }
+        }
+        .header__bottom{
+            .header__container{
+                justify-content: space-between;
+                align-items: center;
+            }
+            .burger{
+                display: block;
+                &.active{
+                    span:nth-child(1){
+                        transform: rotate(135deg);
+                        top: calc(50% - 1px);
+                    }
+                    span:nth-child(2){
+                        opacity: 0;
+                    }
+                    span:nth-child(3){
+                        transform: rotate(-135deg);
+                        top: calc(50% - 1px);
+                    }
+                }
+            }
+            
+            .header__nav{
+                position: absolute;
+                height: 451px;
+                width: 100%;
+                background: white;
+                left: -100%;
+                z-index: 10;
+                top: 53px;
+                transition: 0.5s;
+                
+                justify-content: center;
+                flex-direction: column;
+                gap: 50px;
+                padding-left: 20px;
+
+            }
+            .header__images{
+                display: flex;
+                gap: 30px;
+            }
+            .header__link{
+                align-self: center;
+            }
+            & .active{
+                left: 0;
+                
+            }
+        }
+    }
+}
+
